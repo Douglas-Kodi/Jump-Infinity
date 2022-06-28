@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 body{
-    background:rgb(35, 160, 35);
+    background:rgb(10, 120, 10);
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ body{
 .game-board{
     width:100%;
     height:500px;
-    border-bottom:15px solid rgb(35, 160, 35);
+    border-bottom:15px solid rgb(35, 200, 35);
     margin:0 auto;
     position:relative;
     overflow:hidden;
