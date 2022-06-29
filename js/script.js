@@ -41,6 +41,7 @@ if(startflag=="true"){
 function gameplay(){
     if(gameflag=="true"){
         gameflag = "false";
+        playSoundStart();
         const gamestart = document.querySelector('.gamestart');
         const gameover = document.querySelector('.gameover');
         const mario = document.querySelector('.mario');
@@ -72,6 +73,8 @@ function gameplay(){
                 gameover.style.display = 'block';
                 overflag = "true";
                 over();
+                pauseSoundStart();
+                playSoundOver();
             }
         }, 10)
         document.addEventListener('keydown', (event) => {
@@ -137,11 +140,13 @@ function over(){
                         if(select3.style.display=='block'){
                             gameflag = "true";
                             gameplay();
+                            pauseSoundOVer();
                         }
                         if(select4.style.display=='block'){
                             startflag = "true";
                             gameover.style.display = 'none';
-                            gamestart.style.display = 'block';
+                            gamestart.style.display = 'block';                           
+                            pauseSoundOVer();
                         }
                 }
             }
@@ -153,3 +158,21 @@ function over(){
         });
     }
 }
+var ThemeMarioSong = document.getElementById("myStart"); 
+
+function playSoundStart() { 
+    ThemeMarioSong.play(); 
+} 
+
+function pauseSoundStart() { 
+    ThemeMarioSong.pause();
+} 
+var ThemeMarioGameOver = document.getElementById("myOver"); 
+
+function playSoundOver() { 
+    ThemeMarioGameOver.play(); 
+} 
+
+function pauseSoundOVer() { 
+    ThemeMarioGameOver.pause(); 
+} 
